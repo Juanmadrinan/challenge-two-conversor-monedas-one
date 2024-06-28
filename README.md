@@ -53,7 +53,7 @@
 
 --------------------------
 <h2>Demostración de la Funcionalidad de mi aplicación :)</h2>
-<p>En el cuadro superior se presenta: La aplicación, El resultado y la Validación con la calculadora. En los cuadros inferiores se presentan los datos de conversion obtenidos de la Api (ExchangeRate) para hacer la prueba:</p>
+<p>En el cuadro superior se presenta: La aplicación, El resultado y la Validación con la calculadora. En los cuadros inferiores se presentan los datos de conversion obtenidos de la Api (ExchangeRate) para hacer la prueba, la aplicacion consta de cuatro monedas posibles para seleccionar tanto como moneda base o tasa de cambio de moneda: </p>
 
 ### Multiple seleccion de Moneda Base
 ![image](https://github.com/Juanmadrinan/challenge-two-conversor-monedas-one/assets/125837348/db82a6b6-121e-456f-bfaa-3be636747f63)
@@ -67,5 +67,7 @@
 ![image](https://github.com/Juanmadrinan/challenge-two-conversor-monedas-one/assets/125837348/52cb33ae-47d8-442d-b4cc-0bd7811f344e)
 ### USD ($10000) -> BRL
 ![image](https://github.com/Juanmadrinan/challenge-two-conversor-monedas-one/assets/125837348/96b3702b-4eba-4e2e-ad94-abd70914184c)
+
+
 
 ----------------------------
