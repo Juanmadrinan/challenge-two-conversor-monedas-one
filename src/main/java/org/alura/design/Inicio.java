@@ -8,13 +8,15 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Inicio {
     public JPanel panel1;
     private JTextField tuMonedatextField;
     private JComboBox tuMonedaComboBox;
     private JComboBox convertirComboBox;
-    private JButton buttonExchange;
+    private JButton botonCambio;
     private Double date;
 
     public Double getDate() {
@@ -26,32 +28,30 @@ public class Inicio {
     }
 
     public Inicio() throws IOException, InterruptedException {
-        CoinDao coinDao = new CoinDaoImplement();
-        String coin = (String) tuMonedaComboBox.getSelectedItem();
-        String exchangeRate = (String) convertirComboBox.getSelectedItem();
-
-        Double a = coinDao.getExchangeRate(coin);
-        System.out.println("a: " + a);
-        Double b = coinDao.getExchangeRate(exchangeRate);
-        System.out.println("b: " + b);
-
-        buttonExchange.addActionListener(new ActionListener() {
-
+        botonCambio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Double dato = Double.parseDouble(tuMonedatextField.getText());
-                double result = (a * dato) * b;
-
+                CoinDao coinDao = new CoinDaoImplement();
+                String coin = (String) tuMonedaComboBox.getSelectedItem();
+                String exchangeRate = (String) convertirComboBox.getSelectedItem();
+                BigDecimal a;
                 try {
-                    Result dialog = new Result(result);
-                    dialog.pack();
-                    dialog.setVisible(true);
-                    System.exit(0);
+                    a = coinDao.getExchangeRate(coin, exchangeRate);
+                    System.out.println("a en Inicio: " + a);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (InterruptedException ex) {
                     throw new RuntimeException(ex);
                 }
+
+                BigDecimal b = new BigDecimal(Double.parseDouble(tuMonedatextField.getText()));
+                System.out.println("b en Inicio: " + b);
+                BigDecimal result = a.multiply(b);
+                result = result.setScale(2, RoundingMode.HALF_UP);
+                System.out.println("result en Inicio: " + result);
+
+                JOptionPane.showMessageDialog(null, "El resultado es: " + result);
+
             }
         });
     }
