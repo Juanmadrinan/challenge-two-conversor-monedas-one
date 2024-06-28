@@ -28,20 +28,12 @@ public class CoinDaoImplement implements CoinDao {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         String json = response.body();
-        System.out.println("json: " + json);
 
         Gson gson = new Gson();
         ExchangeRateModel monedaBase = gson.fromJson(json, ExchangeRateModel.class);
-        System.out.println("monedaBase: " + monedaBase);
-
-        /*List<Double> array = new ArrayList<>();*/
-
-        /*array.add(monedaBase.getConversionRates().get(baseCoin));*/
-        /*System.out.println("array: " + array.get(0).getClass().getSimpleName());*/
 
         //Paso la Clave de la moneda -> "USD" y me devuelve el valor de la moneda en USD
         BigDecimal conversion = new BigDecimal(monedaBase.getConversionRates().get(exchangeCoin));
-        System.out.println("Double: " + conversion);
 
         return conversion;
     }

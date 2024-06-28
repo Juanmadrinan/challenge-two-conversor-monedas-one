@@ -37,7 +37,6 @@ public class Inicio {
                 BigDecimal a;
                 try {
                     a = coinDao.getExchangeRate(coin, exchangeRate);
-                    System.out.println("a en Inicio: " + a);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (InterruptedException ex) {
@@ -45,10 +44,8 @@ public class Inicio {
                 }
 
                 BigDecimal b = new BigDecimal(Double.parseDouble(tuMonedatextField.getText()));
-                System.out.println("b en Inicio: " + b);
                 BigDecimal result = a.multiply(b);
                 result = result.setScale(2, RoundingMode.HALF_UP);
-                System.out.println("result en Inicio: " + result);
 
                 JOptionPane.showMessageDialog(null, "El resultado es: " + result);
 

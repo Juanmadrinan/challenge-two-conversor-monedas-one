@@ -55,6 +55,12 @@
 <h2>Demostración de la Funcionalidad de mi aplicación :)</h2>
 <p>En el cuadro superior se presenta: La aplicación, El resultado y la Validación con la calculadora. En los cuadros inferiores se presentan los datos de conversion obtenidos de la Api (ExchangeRate) para hacer la prueba:</p>
 
+### Multiple seleccion de Moneda Base
+![image](https://github.com/Juanmadrinan/challenge-two-conversor-monedas-one/assets/125837348/db82a6b6-121e-456f-bfaa-3be636747f63)
+### Multiple seleccion de Moneda de Cambio
+![image](https://github.com/Juanmadrinan/challenge-two-conversor-monedas-one/assets/125837348/0cd6a304-ae68-4d0c-8a51-144eef8589e3)
+
+## Ejemplo:
 ### USD ($10000) -> COP
 ![image](https://github.com/Juanmadrinan/challenge-two-conversor-monedas-one/assets/125837348/0433fa45-f47e-42df-bd4a-904cf72e0e4e)
 ### USD ($10000) -> CLP
